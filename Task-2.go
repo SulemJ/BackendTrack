@@ -6,25 +6,37 @@ import (
 	"unicode"
 )
 
-func test(x string) map[string]int {
+func wrdCnt(x string) map[string]int {
 	x = strings.ToLower(x)
 	mp := make(map[string]int)
 	for i := range len(x) {
 		if !unicode.IsLetter(rune(x[i])) {
 			continue
 		}
-		val, ok := mp[string(x[i])]
+		_, ok := mp[string(x[i])]
 		if !ok {
 			mp[string(x[i])] = 1
 		} else {
 			mp[string(x[i])] += 1
 		}
-		fmt.Println(val, ok, mp)
 	}
+	fmt.Println(mp)
 	return mp
-	// fmt.Println(x)
 }
+
+func Palind(s string) bool {
+	s = strings.ToLower(s)
+	for i, j := 0, len(s)-1; j >= 0; i, j = i+1, j-1 {
+
+		if s[i] != s[j] {
+			return false
+		}
+	}
+	return true
+
+}
+
 func main() {
-	str := "hel-lo"
-	test(str)
+	wrdCnt("hel-lo")
+	fmt.Println(Palind("Ma-am"))
 }
