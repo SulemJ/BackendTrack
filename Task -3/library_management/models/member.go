@@ -3,5 +3,5 @@ package models
 type Member struct {
 	ID            int
 	Name          string
-	BorrowedBooks []Book
+	BorrowedBooks []Book // a slice to hold borrowed books
 }
