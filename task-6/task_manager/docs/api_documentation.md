@@ -43,9 +43,9 @@
 
 # 3. Configure MongoDB Connection
 
-    - Create/load a connection string:
+Create/load a connection string:
 
-.env or environment variable - MONGO_URI=mongodb://localhost:27017 - DB_NAME=taskManager
+    - .env or environment variable - MONGO_URI=mongodb://localhost:27017 - DB_NAME=taskManager
 
 OR if using Atlas:
 
